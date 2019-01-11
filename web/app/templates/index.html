@@ -4,4 +4,5 @@
     <h2>Content for My App</h2>
     <p>Stuff etc etc.</p>
     <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
+    <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a>
 {% endblock content %}
