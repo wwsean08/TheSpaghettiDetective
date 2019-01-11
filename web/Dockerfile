@@ -1,6 +1,6 @@
 FROM python:3
 
-RUN apt-get update && apt-get install -y vim
+RUN apt-get update && apt-get install -y vim pkg-config libxmlsec1-dev
 
 ADD . /app
 WORKDIR /app

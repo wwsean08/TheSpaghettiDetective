@@ -3,4 +3,5 @@
 {% block content %}
     <h2>Content for My App</h2>
     <p>Stuff etc etc.</p>
+    <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
 {% endblock content %}
