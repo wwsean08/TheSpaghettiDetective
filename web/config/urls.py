@@ -19,6 +19,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', include('app.urls')),
-    path('', include('social_django.urls', namespace='social')),  # <--
+    path('', include('social_django.urls', namespace='social')),
+    path('', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]

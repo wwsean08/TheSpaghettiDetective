@@ -1,8 +1,15 @@
 {% extends "layout.html" %}
 
+{% block title %}Home{% endblock %}
+
 {% block content %}
-    <h2>Content for My App</h2>
-    <p>Stuff etc etc.</p>
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
     <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
     <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a>
-{% endblock content %}
+{% endif %}
+{% endblock %}
